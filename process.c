@@ -219,7 +219,6 @@ int main(int argc, char ** args){
 					strcat(filename, ".result");
 					FILE * file = fopen(filename, "w");
 					// calculate entropy and byte adjacent information, write the result to file
-					int bit_array[10000];
 					
 				}
 			} else {

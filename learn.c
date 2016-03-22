@@ -18,6 +18,7 @@ int tcp_packets_count = 0;
 int udp_packets_count = 0;
 int adjacent_count[256][256];
 int adjacent_matrix[256][256];
+int vector_length = 0;
 
 void init(){
 	packets_count = 0;
@@ -112,8 +113,7 @@ void cal_adjacent_matrix(){
 		tmp[idx] = value;
 	}
 
-	int special_line = 65536 / 5;
-	int special_value = tmp[special_line];
+	int special_value = tmp[vector_length - 1];
 	for(i = 0;i < 256;i++){
 		for(j = 0;j < 256;j++){
 			if(adjacent_count[i][j] >= special_value){
@@ -126,12 +126,13 @@ void cal_adjacent_matrix(){
 }
 
 int main(int argc, char ** args){
-	if(argc != 3){
-		printf("usage: ./learn path_of_unencrypted_packets result_file\n");
+	if(argc != 4){
+		printf("usage: ./learn path_of_unencrypted_packets result_file vector_length\n");
 		return 0;
 	}
 
 	init();
+	vector_length = atoi(args[3]);
 
 	DIR * dir = opendir(args[1]);
 	if(dir){

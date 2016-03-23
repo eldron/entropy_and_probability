@@ -9,8 +9,7 @@
 #include <netinet/tcp.h>
 #include <netinet/udp.h>
 #include <pcap.h>
-
-#define SWAP_SHORT(x) (((x & 0x00ff) << 8) | ((x & 0xff00) >> 8))
+#include <math.h>
 
 int packets_count = 0;
 int vlan_packets_count = 0;
@@ -155,7 +154,7 @@ int main(int argc, char ** args){
 							printf("packet too short\n");
 						} else {
 							eth_hdr = (struct ether_header *) packet;
-							unsigned short ether_type = SWAP_SHORT(eth_hdr->ether_type);
+							unsigned short ether_type = ntohs(eth_hdr->ether_type);
 							if(ether_type == 0x0800){
 								// ip packet
 								ip_hdr = (struct ip *) (packet + sizeof(struct ether_header));
@@ -163,7 +162,7 @@ int main(int argc, char ** args){
 							} else if(ether_type == 0x8100){
 								// vlan packet
 								unsigned short * vlan_proto = (unsigned short *) (packet + sizeof(struct ether_header) + 2);
-								if(*vlan_proto == 0x0800){
+								if(ntohs(*vlan_proto) == 0x0800){
 									vlan_packets_count++;
 									ip_hdr = (struct ip *) (packet + sizeof(struct ether_header) + 4);
 									process_ip_packet(ip_hdr);

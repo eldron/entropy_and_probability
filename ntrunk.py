@@ -1,6 +1,7 @@
 from __future__ import division
 import random
 import math
+import sys
 
 def cal_entropy(N):
 	list = []
@@ -27,7 +28,7 @@ def cal_ntrunk(N):
 
 	return float(sum(values) / 100000)
 
-# print cal_ntrunk(65536)
-
-for i in range(200, 65536):
-	print cal_ntrunk(i)
+for i in range(200, 1600):
+	value = cal_ntrunk(i)
+	print value
+	sys.stderr.write(str(value) + "\n")

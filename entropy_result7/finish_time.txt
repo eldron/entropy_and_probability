@@ -1,0 +1,18 @@
+total 64
+-rw-r--r-- 1 root root 2788 Apr  1 04:34 1.txt
+-rw-r--r-- 1 root root 2764 Apr  1 10:04 2.txt
+-rw-r--r-- 1 root root 2759 Apr  1 15:36 3.txt
+-rw-r--r-- 1 root root 2770 Apr  1 19:40 4.txt
+-rw-r--r-- 1 root root 2763 Apr  2 02:01 5.txt
+-rw-r--r-- 1 root root 2766 Apr  2 05:45 6.txt
+-rw-r--r-- 1 root root 2753 Apr  2 12:23 7.txt
+-rw-r--r-- 1 root root    0 Apr  5 08:21 finish_time.txt
+-rwxr-xr-x 1 root root  471 Mar 31 21:15 hello.sh
+-rwxr-xr-x 1 root root  665 Mar 31 21:11 ntrunk1.py
+-rwxr-xr-x 1 root root  665 Mar 31 21:12 ntrunk2.py
+-rwxr-xr-x 1 root root  665 Mar 31 21:12 ntrunk3.py
+-rwxr-xr-x 1 root root  666 Mar 31 21:12 ntrunk4.py
+-rwxr-xr-x 1 root root  667 Mar 31 21:13 ntrunk5.py
+-rwxr-xr-x 1 root root  667 Mar 31 21:13 ntrunk6.py
+-rwxr-xr-x 1 root root  666 Mar 31 21:04 ntrunk7.py
+-rwxr-xr-x 1 root root  667 Mar 31 21:13 ntrunk.py
